@@ -3,10 +3,10 @@ extends layout
 block content
     h1= 'Edit Product'
     form(method='post', 
-         name='product-edit-form', 
-         action='/products/product-edit/'+product.id
-         enctype='multipart/form-data')
-         table.form_table(cellspacing='5', cellpadding='5',border='0')
+        name='product-edit-form', 
+        action='/products/product-edit/'+product.id
+        enctype='multipart/form-data')
+        table.form_table(cellspacing='5', cellpadding='5',border='0')
             tbody   
                 tr
                     td.label Id:
@@ -33,3 +33,4 @@ block content
                     td
                         br
                         input.buttonSubmit(type='submit' value='Update Product')
+        a(href='/products/') Return to Product List

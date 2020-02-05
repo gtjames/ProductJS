@@ -9,3 +9,5 @@ block content
         each product in products
             li 
                 a(href='/products/'+product.id) #{product.name}
+                p
+                    img.image(src=product.image_path width='100px' height='100px')
