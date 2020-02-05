@@ -1,0 +1,33 @@
+extends layout
+
+block content
+    h1= 'Create Product'
+    form(method='post', 
+         name='product-create-form', 
+         action='/products/product-create'
+         enctype='multipart/form-data')
+         table.form_table(cellspacing='5', cellpadding='5',border='0')
+            tbody   
+                tr
+                    td.label Id:
+                    td  
+                        input(rows='5', name='id', value='')
+                tr
+                    td.label Name:
+                    td  
+                        input(rows='5', name='name', value='')
+                tr
+                    td.label Price:
+                    td  
+                        input(rows='5', name='price', value='')    
+                tr
+                    td.label Size:
+                    td  
+                        input(rows='5', name='size', value='')
+                tr
+                    td
+                        input(type='file',name='imageUpload')        
+                tr
+                    td
+                        br
+                        input.buttonSubmit(type='submit' value='Create Product')

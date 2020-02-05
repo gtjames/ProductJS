@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    p 
+        a(href='/products/product-edit/'+product.id) Edit Product
+    h1= product.name
+    p $ #{product.price}
+    p size: #{product.size}
+    p
+        img.image(src=product.image_path width='100px' height='100px')

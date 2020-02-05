@@ -1,0 +1,35 @@
+extends layout
+
+block content
+    h1= 'Edit Product'
+    form(method='post', 
+         name='product-edit-form', 
+         action='/products/product-edit/'+product.id
+         enctype='multipart/form-data')
+         table.form_table(cellspacing='5', cellpadding='5',border='0')
+            tbody   
+                tr
+                    td.label Id:
+                    td  
+                        input(rows='5', name='id', value=product.id)
+                tr
+                    td.label Name:
+                    td  
+                        input(rows='5', name='name', value=product.name)
+                tr
+                    td.label Price:
+                    td  
+                        input(rows='5', name='price', value=product.price)    
+                tr
+                    td.label Size:
+                    td  
+                        input(rows='5', name='size', value=product.size)
+                tr
+                    td
+                        input(type='file', name='imageUpload')
+                        input(type='hidden', name='image_path', value=product.image_path)
+                        
+                tr
+                    td
+                        br
+                        input.buttonSubmit(type='submit' value='Update Product')

@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    p My Products
+    p
+    p 
+        a(href='/products/product-create') Create Product
+    ul
+        each product in products
+            li 
+                a(href='/products/'+product.id) #{product.name}
