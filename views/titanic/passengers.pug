@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+    p Titanic Passengers
+    p 
+    form(method='post', action='/titanic/search')
+        Find Survivors
+        input(rows='5', name='search', value=search) 
+    p Passengers/Crew Returned: #{passengers.length}
+    p Alive like Rose: #{survivors}
+    p Dead like Jack #{notSurvivors}
+    table
+        tr
+            each th in headers
+                th= th
+
+        each passenger in passengers
+            tr
+                td
+                  a(href='/titanic/'+passenger.passengerCrew+'?'+passenger.name) #{passenger.lastName},
+                td= passenger.firstName
+                td= passenger.age
+                td= passenger.passengerClass
+                td= passenger.passengerCrew
+                td= passenger.role
+                td= passenger.survivor
